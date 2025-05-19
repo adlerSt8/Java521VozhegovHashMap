@@ -32,16 +32,16 @@ public class Main {
             switch (choice) {
                 case 1:
                     System.out.println("*** Dobavlenie novogo slova ***");
-                    System.out.println("Vvedite slovo");
+                    System.out.println("Vvedite slovo(en)");
                     scanner = new Scanner(System.in);
                     String wordAdd = scanner.nextLine();
 
                     if (!dictionary.containsKey(wordAdd) && !dictionary.containsValue(wordAdd)) {
-                        System.out.print("Vvedite perevod dannoqo slova : ");
+                        System.out.print("Vvedite perevod dannoqo slova(ru) : ");
                         scanner = new Scanner(System.in);
                         String newWord = scanner.nextLine();
                         newWord = newWord.toLowerCase();
-                        dictionary.put(newWord, wordAdd);
+                        dictionary.put(wordAdd, newWord);
                     }
                     break;
                 case 2:
@@ -121,6 +121,9 @@ public class Main {
                             }
                         }
                     }
+                    break;
+                default:
+                    System.out.println("Vveden neveriy parametr.");
                     break;
             }
         }
